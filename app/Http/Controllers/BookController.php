@@ -108,6 +108,7 @@ class BookController extends Controller
             $books->image = $filename;
         }
         $books->save();
+        return redirect()->action('BookController@index');
     }
     /**
      * Remove the specified resource from storage.

@@ -16,6 +16,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
+
+    <link href="{{ asset('css/lity.min.css') }}" rel="stylesheet">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -41,20 +44,20 @@
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('books') }}">หนังสือ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('typebooks') }}">ประเภทหนังสือ</a>
-                        </li>
-                      
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">เข้าระบบ</a>
+                                <a class="nav-link" href="{{ route('books') }}">หนังสือ</a>
                             </li>
-                            @if (Route::has('register'))
+                        <li class="nav-item">
+                                <a class="nav-link" href="{{ route('typebooks') }}">ประเภทหนังสือ</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('about') }}">เกี่ยวกับเรา</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">เข้าสู่ระบบ</a>
+                            </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">ลงทะเบียน</a>
                                 </li>
-                            @endif
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -83,5 +86,13 @@
             @yield('content')
         </main>
     </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{ asset('js/lity.min.js') }}"></script>
+
+<script src="http://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+@yield('footer')
+
 </body>
 </html>

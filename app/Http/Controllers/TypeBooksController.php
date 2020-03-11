@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\TypeBooks;
 
-class TypebookController extends Controller
+class TypeBooksController extends Controller
 {
     public function index(){
         $typebooks = TypeBooks::all();//แสดงข้อมูลทั้งหมด

@@ -10,18 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('about','SiteController@index');
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('about','SiteController@index');
+Route::get('about','SiteController@index')->name('about');
 
-Route::get('typebooks','TypeBookController@index')->name('typebooks');
-Route::get('typebooks/destroy/{id}','TypeBooksController@destroy');
+Route::get('typebooks','TypeBooksController@index')->name('typebooks');
+Route::get('typebooks/destroy/{id}','TypebooksController@destroy');
 
-Route::resource('books','BookController')->name('index','books');
+Route::resource('books', 'BooksController')->name('index','books');
 
 Auth::routes();
+
+Route::resource('/books','BooksController')->name('index','books');
 
 Route::get('/home', 'HomeController@index')->name('home');
